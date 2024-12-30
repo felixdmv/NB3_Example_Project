@@ -1,0 +1,16 @@
+{
+    "java.dependency.packagePresentation": "hierarchical",
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib\\commons-net-3.3.jar",
+            "c:\\Users\\felix\\Documents\\MÁSTER\\2. SISTEMAS MULTIAGENTE - 4.5 ECTS\\PRÁCTICA\\Práctica_Negociación\\NB3_Example_Project\\lib\\NegotiationServer-1.0.jar",
+            "c:\\Users\\felix\\Documents\\MÁSTER\\2. SISTEMAS MULTIAGENTE - 4.5 ECTS\\PRÁCTICA\\Práctica_Negociación\\NB3_Example_Project\\lib\\NB3-1.5.jar"
+        ],
+        "exclude": [
+            "lib/commons-net-3.3.jar"
+        ]
+    },
+    "java.project.sourcePaths": [
+        "src"
+    ]
+}
