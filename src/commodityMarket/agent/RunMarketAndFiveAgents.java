@@ -26,7 +26,7 @@ public class RunMarketAndFiveAgents {
 		String logfolderPath = "log/" + dateString;
 		
 		//Set the duration of the negotiations to 30 seconds.
-		int negotiationLength = 5*1000;
+		int negotiationLength = 5*1000; //5 seconds.
 		
 		
 		//Run an instance of the Commodity Market
