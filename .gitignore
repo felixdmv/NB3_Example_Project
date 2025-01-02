@@ -10,7 +10,8 @@
 # Ignore all local history of files
 **/.history
 
+bin/*
+lib/*
+
 # Ignore log files in the src directory
 src/log/*
-
-lib/*
