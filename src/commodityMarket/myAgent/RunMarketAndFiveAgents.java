@@ -36,28 +36,20 @@ public class RunMarketAndFiveAgents {
 		CommodityUtilityProfile utilityProfile = CommodityUtilityProfile.getRandomProfile(assets.NUM_AGENTS, assets.NUM_COMMODITIES);
 		market.setUtilityProfile(utilityProfile);
 		market.start();
-		
-		
-		try {
-			
-			InetAddress serverAddress = InetAddress.getLocalHost();
-			
-			for(int i=0; i<5; i++){
-				
-				System.out.println("RunFiveAgents.main() starting agent " + names[i]);
-				
-				MyNegotiator agent = new MyNegotiator(names[i], serverAddress, 1234);
-				agent.enableLoggers(logfolderPath);
-				agent.start();
-			}
-			
-		}catch (UnknownHostException e) {
-			e.printStackTrace();
-		}
-		
 
-		
-		
-	}
+        try {
+            InetAddress serverAddress = InetAddress.getLocalHost();
 
+            for (int i = 0; i < 5; i++) {
+                System.out.println("RunFiveAgents.main() starting agent " + names[i]);
+
+                MyNegotiator agent = new MyNegotiator(names[i], serverAddress, 1234);
+                agent.enableLoggers(logfolderPath);
+                agent.start();
+            }
+
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }       
+    }
 }
