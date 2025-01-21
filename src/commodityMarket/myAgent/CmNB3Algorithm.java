@@ -315,14 +315,18 @@ public class CmNB3Algorithm extends NB3Algorithm{
     	// Let all other agents give their assets to the current agent, excluding conflicting transactions.
     	for (int otherAgentID = 0; otherAgentID < maximalAssets.NUM_AGENTS; otherAgentID++) {
 	        if (otherAgentID == agentID) {
-            	continue;
+            	continue; // Skip the current agent as we are only interested in what others can give.
         	}
 
         	for (int commodity = 0; commodity < maximalAssets.NUM_COMMODITIES; commodity++) {
-	            // Skip transactions where the agent has supplied or where the other agent has consumed the commodity.
-            	if (!hasSupplied(agentID, commodity, branch) && !hasConsumed(otherAgentID, commodity, branch)) {
+	            // Check if the agent has already supplied this commodity in the current branch.
+            	if (!hasSupplied(agentID, commodity, branch)) {
 	                int quantity = maximalAssets.getAssets(agentID, commodity) + maximalAssets.getAssets(otherAgentID, commodity);
                 	maximalAssets.setAssets(agentID, commodity, quantity);
+                	System.out.println("Agent " + agentID + " is attempting a valid transaction for commodity " + commodity + " in the current branch.");
+            	} else {
+	                // The agent is attempting to supply and consume the same commodity in the branch.
+                	System.out.println("Agent " + agentID + " is attempting an invalid transaction: consuming and supplying commodity " + commodity + " in the same branch.");
             	}
         	}
     	}
@@ -332,6 +336,7 @@ public class CmNB3Algorithm extends NB3Algorithm{
 
     	return val;
 	}
+
 	
 	
 	@Override

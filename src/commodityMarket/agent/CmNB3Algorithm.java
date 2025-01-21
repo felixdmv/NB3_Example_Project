@@ -328,12 +328,12 @@ public class CmNB3Algorithm extends NB3Algorithm{
 			
 			for(int commodity=0; commodity<maximalAssets.NUM_COMMODITIES; commodity++){
 				
-				if( ! hasSupplied(agentID, commodity, branch) ){ //check if the given agent appears as a supplier of this commodity in the given branch.
+				//if( ! hasSupplied(agentID, commodity, branch) ){ //check if the given agent appears as a supplier of this commodity in the given branch.
 					
-					int quantity = maximalAssets.getAssets(agentID, commodity) + maximalAssets.getAssets(otherAgentID, commodity);
+				int quantity = maximalAssets.getAssets(agentID, commodity) + maximalAssets.getAssets(otherAgentID, commodity);
 					
-					maximalAssets.setAssets(agentID, commodity, quantity);
-				}
+				maximalAssets.setAssets(agentID, commodity, quantity);
+				//}
 			}
 		}
 

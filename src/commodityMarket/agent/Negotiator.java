@@ -68,6 +68,7 @@ public class Negotiator extends Thread{
 		this.myName = name;
 		this.negoClient = new NegotiationClient(serverAddress, serverPort);
 		this.nb3Algorithm = new CmNB3Algorithm(this);
+		this.nb3Algorithm.setConcessionDegrees(7, 8); // 2 and 4 are the default values.
 	}
 	
 	
